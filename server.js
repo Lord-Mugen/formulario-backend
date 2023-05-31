@@ -1,9 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
-const port = 3000; // puerto para el backend
+const port = 3000;
 
 // Middleware para manejar datos JSON
 app.use(express.json());
@@ -42,7 +43,7 @@ app.post("/formulario", (req, res) => {
 
 // Conexión a la base de datos
 mongoose
-  .connect("mongodb://127.0.0.1:27017/formulario_db", {
+  .connect(process.env.DB_CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
