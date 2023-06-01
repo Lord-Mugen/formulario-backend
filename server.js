@@ -43,7 +43,7 @@ app.post("/formulario", (req, res) => {
 
 // Conexión a la base de datos
 mongoose
-  .connect(process.env.DB_CONNECTION_STRING, {
+  .connect(process.env.URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
